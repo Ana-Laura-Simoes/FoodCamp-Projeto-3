@@ -6,13 +6,14 @@ let ValorPrato;
 let NomeBebida;
 let ValorBebida;
 let NomeSobremesa;
-let ValorSobremesa;
+let ValorSobremesa; 
 let nome;
 let endereço;
+let total=0;
 
-function selecionarPRATO(op,valor,item) {
+function selecionarPRATO(op, valor, item) {
     NomePrato = item;
-    ValorSobremesa = parseFloat(valor.replace(",", "."));
+    ValorPrato = parseFloat(valor.replace(",", "."));
     let certinho = op + "_certinho";
     const selecionado = document.querySelector(".PRATOS .selecionado");
     const CERTO = document.querySelector(".PRATOS .escolhido");
@@ -31,7 +32,7 @@ function selecionarPRATO(op,valor,item) {
     prato = 1;
     BotaoFinal();
   }
-function selecionarBEBIDA(op, valor,item) {
+function selecionarBEBIDA(op, valor, item) {
   NomeBebida = item;
   ValorBebida = parseFloat(valor.replace(",", "."));
   let certinho = op + "_certinho";
@@ -53,7 +54,7 @@ function selecionarBEBIDA(op, valor,item) {
   BotaoFinal();
 }
 
-function selecionarSOBREMESA(op, valor,item) {
+function selecionarSOBREMESA(op, valor, item) {
   NomeSobremesa = item;
   ValorSobremesa = parseFloat(valor.replace(",", "."));
   let certinho = op + "_certinho";
@@ -81,4 +82,43 @@ function BotaoFinal() {
       elemento.innerHTML = "<p onclick='confirmarPedido()'>Fechar pedido<p>";
       elemento.classList.add("Finalizar");
     }
+  }
+  function confirmarPedido() {
+    const elemento = document.querySelector(".fundo");
+    elemento.classList.remove("escondido");
+
+    const itemprato=document.querySelector(".fundo .confirmar .itemPrato");
+    itemprato.innerHTML=NomePrato;
+    const preçoprato=document.querySelector(".fundo .confirmar .preçoprato");
+    preçoprato.innerHTML=ValorPrato.toFixed(2);;
+
+    
+    const itembebida=document.querySelector(".fundo .confirmar .itemBebida");
+    itembebida.innerHTML=NomeBebida;
+    const preçobebida=document.querySelector(".fundo .confirmar .preçoBebida");
+    preçobebida.innerHTML=ValorBebida.toFixed(2);;
+
+    const itemdoce=document.querySelector(".fundo .confirmar .itemDoce");
+    itemdoce.innerHTML=NomeSobremesa;
+    const preçodoce=document.querySelector(".fundo .confirmar .preçoDoce");
+    preçodoce.innerHTML=ValorSobremesa.toFixed(2);;
+
+    total = ValorPrato + ValorBebida + ValorSobremesa;
+
+    const itenstotal=document.querySelector(".fundo .confirmar .total");
+    itenstotal.innerHTML=total.toFixed(2);
+
+
+    
+
+  
+}
+  
+  function cancelarPedido() {
+    const elemento = document.querySelector(".fundo");
+    elemento.classList.add("escondido");
+  }
+  function NomeEnderço() {
+    nome = prompt("Para prosseguir, informe seu nome:");
+    endereço = prompt("Agora, coloque seu endereço:");
   }
