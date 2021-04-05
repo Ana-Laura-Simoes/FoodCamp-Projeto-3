@@ -83,42 +83,48 @@ function BotaoFinal() {
       elemento.classList.add("Finalizar");
     }
   }
+  function NomeEndereço(){
+    nome=prompt("Para continuar, informe seu nome:");
+    endereço=prompt("Agora, coloque o endereço para entrega:");
+  }
   function confirmarPedido() {
+      NomeEndereço();
     const elemento = document.querySelector(".fundo");
     elemento.classList.remove("escondido");
 
     const itemprato=document.querySelector(".fundo .confirmar .itemPrato");
     itemprato.innerHTML=NomePrato;
     const preçoprato=document.querySelector(".fundo .confirmar .preçoprato");
-    preçoprato.innerHTML=ValorPrato.toFixed(2);;
+    preçoprato.innerHTML=ValorPrato.toFixed(2);
 
     
     const itembebida=document.querySelector(".fundo .confirmar .itemBebida");
     itembebida.innerHTML=NomeBebida;
     const preçobebida=document.querySelector(".fundo .confirmar .preçoBebida");
-    preçobebida.innerHTML=ValorBebida.toFixed(2);;
+    preçobebida.innerHTML=ValorBebida.toFixed(2);
 
     const itemdoce=document.querySelector(".fundo .confirmar .itemDoce");
     itemdoce.innerHTML=NomeSobremesa;
     const preçodoce=document.querySelector(".fundo .confirmar .preçoDoce");
-    preçodoce.innerHTML=ValorSobremesa.toFixed(2);;
+    preçodoce.innerHTML=ValorSobremesa.toFixed(2);
 
     total = ValorPrato + ValorBebida + ValorSobremesa;
 
     const itenstotal=document.querySelector(".fundo .confirmar .total");
     itenstotal.innerHTML=total.toFixed(2);
-
-
-    
-
-  
 }
   
   function cancelarPedido() {
     const elemento = document.querySelector(".fundo");
     elemento.classList.add("escondido");
   }
-  function NomeEnderço() {
-    nome = prompt("Para prosseguir, informe seu nome:");
-    endereço = prompt("Agora, coloque seu endereço:");
-  }
+ 
+  function whatsapp(){
+    let mensagem =
+    "Olá, gostaria de fazer o pedido: \n- Prato: " +NomePrato+"\n- Bebida: " +NomeBebida+"\n- Sobremesa: " +NomeSobremesa +"\nTotal: R$ " +total.toFixed(2);
+    //console.log(mensagem);
+    mensagem = mensagem + "\n\nNome: " + nome + "\nEndereço: " + endereço;
+        mensagem = encodeURIComponent(mensagem);
+    window.open("https://wa.me/5514991439964?text=" + mensagem);
+  }  
+  
