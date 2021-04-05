@@ -74,3 +74,11 @@ function selecionarSOBREMESA(op, valor,item) {
   sobremesa = 1;
   BotaoFinal();
 }
+
+function BotaoFinal() {
+    if (prato && bebida && sobremesa) {
+      const elemento = document.querySelector(".final .botão");
+      elemento.innerHTML = "<p onclick='confirmarPedido()'>Fechar pedido<p>";
+      elemento.classList.add("Finalizar");
+    }
+  }
