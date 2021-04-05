@@ -159,7 +159,7 @@ body {
     margin: 0 auto;
     background: #ffffff;
     border-radius: 100px;
-    width: 329px;
+    width: 97%;
     height: 52px;
     border: none;
   }
@@ -175,7 +175,7 @@ body {
     background: #50d074;
     border-radius: 100px;
     border-radius: 100px;
-    width: 329px;
+    width: 97%;
     height: 52px;
     border: none;
   }
@@ -189,7 +189,7 @@ body {
   .fundo {
     height: 100vh;
     width: 100vw;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     position: fixed;
     top: 0;
     left: 0;
