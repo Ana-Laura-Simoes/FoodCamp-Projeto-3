@@ -60,6 +60,7 @@ body {
   }
   .opções {
     width: 172px;
+    height:200px;
     margin: 15px;
     padding: 10px;
     display: flex;
@@ -73,7 +74,7 @@ body {
   img {
     width: 144px;
     height:87px;
-    margin-bottom:90px;
+    margin-bottom:5px;
     border-radius: 4px;
   }
   .escondido {
@@ -85,9 +86,6 @@ body {
     position: absolute;
     right: 13px;
     bottom: 12px;
-  }
-  .esconder {
-    display: none;
   }
   .final {
     width: 100%;
